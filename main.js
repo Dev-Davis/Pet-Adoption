@@ -132,7 +132,7 @@ const pets = [
       color: "Blue",
       specialSkill: "Listens attentively to boring stories.",
       type: "dog",
-      imageUrl: "http://dailynewsdig.com/wp-content/uploads/2014/03/Creative-And-Funny-Dog-Stock-Photography-Pictures-2.jpg"
+      imageUrl: "http://santansun.com/wp-content/uploads/2018/11/5b7fdeab1900001d035028dc.jpeg"
     },
     {
       name: "Spooky",
@@ -202,7 +202,7 @@ const pets = [
       color: "Green",
       specialSkill: "Gives hugs with appropriate pressure and for the right length of time.",
       type: "cat",
-      imageUrl: "http://img.izismile.com/img/img2/20090219/cats_02.jpg"
+      imageUrl: "https://cdn.cnn.com/cnnnext/dam/assets/150324154010-04-internet-cats-restricted-super-169.jpg"
     },
     {
       name: "Lucy",
@@ -218,17 +218,17 @@ const pets = [
    selectedDiv.innerHTML = textToPrint;
 }
 
-  const petMaker = (furry) => {
+  const makePets = (furries) => {
 
     let namePet = '';
 
-    pets.forEach((pet) => {
+    furries.forEach((furry) => {
         namePet += `<div class="petFacts">`
-        namePet += `<p>${pet.name}</p>`
-        namePet += `<p>${pet.color}</p>`
-        namePet += `<p>${pet.specialSkill}</p>`
-        namePet += `<p>${pet.type}</p>`
-        namePet += `<img src="${pet.imageUrl}">`
+        namePet +=  `<p class="name">${furry.name}</p>`
+        namePet +=  `<img src="${furry.imageUrl}">`
+        namePet +=  `<p class="color">${furry.color}</p>`
+        namePet +=  `<p class="skill">${furry.specialSkill}</p>`
+        namePet +=  `<p class="type">${furry.type}</p>`
         namePet += `</div>`
     });
     printToDom('petShow', namePet);
@@ -240,32 +240,27 @@ const pets = [
       const selectedPets = [];
       pets.forEach((pet) => {
           if(pet.type === buttonId) {
-              selectedDiv.push(pets);
+              selectedPets.push(pet);
           }
-
+        });
           if(buttonId === 'all') {
-              petMaker(pets);
+              makePets(pets);
           } else {
-              petMaker(selectedDiv);
+              makePets(selectedPets);
           }
-      });
 
-    const buttonEvents = () => {
-        document.getElementById('feline').addEventListener('click', buttonClick);
-      document.getElementById('canine').addEventListener('click', buttonClick);
-      document.getElementById('reptile').addEventListener('click', buttonClick);
-      document.getElementById('all').addEventListener('click', buttonClick);
-    }
-
-      
   }
 
-
-
-
+    const buttonEvents = () => {
+      document.getElementById('cat').addEventListener('click', buttonClick);
+      document.getElementById('dog').addEventListener('click', buttonClick);
+      document.getElementById('dino').addEventListener('click', buttonClick);
+      document.getElementById('all').addEventListener('click', buttonClick);
+    };
 
 
 init = () => {
-    petMaker(petMaker);
+    buttonEvents();
+    makePets(pets);
 };
 init();
