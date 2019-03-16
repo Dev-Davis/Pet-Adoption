@@ -118,7 +118,7 @@ const pets = [
       color: "Yellow",
       specialSkill: "Does not freak out if you haven’t seen his favorite movie (The Big Lebowski).",
       type: "cat",
-      imageUrl: "http://www.funnycatsite.com/pictures/Close_Up_Yawn.jpg"
+      imageUrl: "https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/87346-istock-933939988.jpg?itok=0h6FJJ6h&resize=1100x1100"
     },
     {
       name: "Salem",
@@ -139,13 +139,13 @@ const pets = [
       color: "Black",
       specialSkill: "Uses litter box at appropriate hours.",
       type: "cat",
-      imageUrl: "http://www.funnycatsite.com/pictures/Lazy_White_Cat.jpg"
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTR-_So1YvOntltgcJIOm3TSRAa_OjNwi0Axy6Fn-qrNefWiAjJA"
     },
     {
       name: "Miss kitty",
       color: "Red",
       specialSkill: "Owns a Nintendo Power Glove.",
-      type: "dino",
+      type: "cat",
       imageUrl: "https://img.buzzfeed.com/buzzfeed-static/static/2015-11/2/12/enhanced/webdr15/anigif_enhanced-29802-1446485228-10.gif?crop=250:165;0,0&downsize=715"
     },
     {
@@ -153,7 +153,7 @@ const pets = [
       color: "Orange",
       specialSkill: "Is comfortable with jokes about his receding hairline.",
       type: "cat",
-      imageUrl: "http://funnyanimalphoto.com/wp-content/uploads/2013/08/cat_caught_mouse_thegatewaypundit.jpg"
+      imageUrl: "https://www.petsfriendsunnyvale.com/storage/app/media/bigstock-British-Longhair-Cat--Months-10206431.jpg"
     },
     {
       name: "Buddy",
@@ -228,8 +228,18 @@ const pets = [
         namePet +=  `<img src="${furry.imageUrl}">`
         namePet +=  `<p class="color">${furry.color}</p>`
         namePet +=  `<p class="skill">${furry.specialSkill}</p>`
-        namePet +=  `<p class="type">${furry.type}</p>`
-        namePet += `</div>`
+        namePet +=  `<div class= `;
+        if(furry.type === 'cat') {
+          namePet += `"cat">`;
+        } else if(furry.type === 'dog'){ 
+          namePet += `"dog">`
+        } else if(furry.type === 'dino') {
+          namePet += `"dino">`;
+        } else {
+          namePet += `"all">`;
+        }
+        namePet += `<p class="cardFooter">${furry.type}</p></div>`;
+        namePet += `</div>`;
     });
     printToDom('petShow', namePet);
   }
@@ -248,7 +258,6 @@ const pets = [
           } else {
               makePets(selectedPets);
           }
-
   }
 
     const buttonEvents = () => {

@@ -1,5 +1,6 @@
 body {
- /* background-color: red; */
+ /* background-color: black; */
+ /* color: lightskyblue; */
 }
 
 #petShow {
@@ -9,23 +10,30 @@ body {
 }
 
 .petFacts {
-    border: 1px solid black;
-    width: 24%;
+    border: 1px solid gray;
+    width: 26%;
     text-align: center;
-    margin-bottom: 10px;
-    box-shadow: 2px 2px 3px red;
+    margin: 15px;
+    box-shadow: 2px 3px 11px slategray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
+
 img {
     width: 150px;
+    border-radius: 10%;
+    box-shadow: 2px 3px 9px darkgrey;
+    align-self: center;
 }
 
 pet-button {
-    justify-content: flex-end;
+    justify-content: flex-end;  
 }
 button {
     width: 63px;
     height: 23px;
-    border-radius: 50%;
+    border-radius: 13%;
     margin-bottom: 20px;
 }
 
@@ -42,6 +50,41 @@ button {
     padding: 7px;
 }
 
-#cat {
-    background-color: 
+.type {
+    margin: 0;
 }
+
+.title {
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+}
+
+button {
+    border: 2px solid lightskyblue;
+}
+
+p {
+    text-align: center;
+}
+
+.cat, .dino, .dog {
+    max-height: 100px;
+    font-size: 18px;
+}
+ .cat {
+     background-color: lightblue;
+     color: darkblue;
+ }
+ .dog {
+     background-color: lightgreen;
+     color: darkgreen;
+ }
+ .dino {
+     background-color: lightyellow;
+     color: orange;
+ }
+
+.cardFooter {
+     margin: 0;
+ }
